@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+    font-family: "Vazirmatn";
+}
+
 body {
     font-family: "Vazirmatn";
     background-color: #f7f9fc;
@@ -18,8 +23,15 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 400px;
+    width: 450px;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    
 }
 
 .inputs {
@@ -37,7 +49,8 @@ input {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 40px;
+    margin: 20px 0px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -52,7 +65,7 @@ button:hover {
 }
 
 .result {
-    margin-top: 20px;
+    margin-top: 12px;
     font-size: 18px;
     font-weight: bold;
 }
@@ -60,4 +73,9 @@ button:hover {
 h2 {
     margin-bottom: 20px;
     color: #333;
+}
+label {
+    /* background-color: red; */
+    text-align: right;
+    margin-top: 16px;
 }

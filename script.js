@@ -29,8 +29,8 @@ function calculateResult() {
     const result_soodemrooz = (input_today - input_yesterday) * input_total_sahm;
     const result_sahm_foroosh = result_soodemrooz / input_today;
 
-    document.getElementById('result_soodemrooz').innerText = result_soodemrooz.toFixed(4);
-    document.getElementById('result_sahm_foroosh').innerText = result_sahm_foroosh.toFixed(4);
+    document.getElementById('result_soodemrooz').innerText = result_soodemrooz.toFixed(2);
+    document.getElementById('result_sahm_foroosh').innerText = result_sahm_foroosh.toFixed(2);
 
     // Save inputs after calculation
     saveToLocalStorage();
