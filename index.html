@@ -11,22 +11,23 @@
 </head>
 <body>
     <div class="container">
-        <h2>ماشین حساب</h2>
+        <h2>ماشین حساب سود</h2>
         <div class="inputs">
-            <label for="input1">مقدار فلان</label>
-            <input type="number" id="input1" placeholder="Input 1">
+            <label for="input_today">نرخ امروز</label>
+            <input type="number" id="input_today" placeholder="">
             
-            <label for="input2">مقدار بهمان</label>
-            <input type="number" id="input2" placeholder="Input 2">
+            <label for="input_yesterday">نرخ سیو سود روز قبل</label>
+            <input type="number" id="input_yesterday" placeholder="">
             
-            <label for="input3">مقدار چنان</label>
-            <input type="number" id="input3" placeholder="Input 3">
-            
-            <label for="input4">قیمت اون</label>
-            <input type="number" id="input4" placeholder="Input 4">
+            <label for="input_total_sahm">تعداد کل سهم</label>
+            <input type="number" id="input_total_sahm" placeholder="">
         </div>
         <button id="calculateBtn">محاسبه</button>
-        <div class="result" id="result">---</div>
+
+        <div class="result" id="">سود امروز</div>
+        <div class="result" id="result_soodemrooz">---</div>
+        <div class="result" id="">تعداد سهم فروش امروز</div>
+        <div class="result" id="result_sahm_foroosh">---</div>
     </div>
 
     <script src="script.js"></script>

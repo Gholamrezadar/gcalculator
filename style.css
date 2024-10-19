@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Vazirmatn", sans-serif;
+    font-family: "Vazirmatn";
     background-color: #f7f9fc;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
+    width: 400px;
     text-align: center;
 }
 

@@ -1,30 +1,36 @@
 // Load saved values from local storage
 window.onload = function() {
-    document.getElementById('input1').value = localStorage.getItem('input1') || '';
-    document.getElementById('input2').value = localStorage.getItem('input2') || '';
-    document.getElementById('input3').value = localStorage.getItem('input3') || '';
-    document.getElementById('input4').value = localStorage.getItem('input4') || '';
+    document.getElementById('input_today').value = localStorage.getItem('input_today') || '';
+    document.getElementById('input_yesterday').value = localStorage.getItem('input_yesterday') || '';
+    document.getElementById('input_total_sahm').value = localStorage.getItem('input_total_sahm') || '';
 }
 
 // Save input values to local storage
 function saveToLocalStorage() {
-    localStorage.setItem('input1', document.getElementById('input1').value);
-    localStorage.setItem('input2', document.getElementById('input2').value);
-    localStorage.setItem('input3', document.getElementById('input3').value);
-    localStorage.setItem('input4', document.getElementById('input4').value);
+    localStorage.setItem('input_today', document.getElementById('input_today').value);
+    localStorage.setItem('input_yesterday', document.getElementById('input_yesterday').value);
+    localStorage.setItem('input_total_sahm', document.getElementById('input_total_sahm').value);
 }
 
 // Placeholder function for your special formula
 function calculateResult() {
-    const input1 = parseFloat(document.getElementById('input1').value) || 0;
-    const input2 = parseFloat(document.getElementById('input2').value) || 0;
-    const input3 = parseFloat(document.getElementById('input3').value) || 0;
-    const input4 = parseFloat(document.getElementById('input4').value) || 0;
+    const input_today = parseFloat(document.getElementById('input_today').value) || 0;
+    const input_yesterday = parseFloat(document.getElementById('input_yesterday').value) || 0;
+    const input_total_sahm = parseFloat(document.getElementById('input_total_sahm').value) || 0;
 
-    // Example calculation (replace with your special formula)
-    const result = input1 + input2 + input3 + input4;
+    if(input_today === 0 || input_yesterday === 0 || input_total_sahm === 0) {
+        alert('لطفا تعداد کل سهم و نرخ امروز و نرخ سیو سود روز قبل را وارد کنید');
+        document.getElementById('result_soodemrooz').innerText = "---";
+        document.getElementById('result_sahm_foroosh').innerText = "---";
+        return;
+    }
 
-    document.getElementById('result').innerText = result;
+    // result calculation
+    const result_soodemrooz = (input_today - input_yesterday) * input_total_sahm;
+    const result_sahm_foroosh = result_soodemrooz / input_today;
+
+    document.getElementById('result_soodemrooz').innerText = result_soodemrooz.toFixed(4);
+    document.getElementById('result_sahm_foroosh').innerText = result_sahm_foroosh.toFixed(4);
 
     // Save inputs after calculation
     saveToLocalStorage();
